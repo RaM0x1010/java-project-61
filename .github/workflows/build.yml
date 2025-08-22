@@ -33,4 +33,4 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew clean build sonarqube
+        run: cd ../../java-project-61/java-project-61/app/gradlew clean build sonarqube
