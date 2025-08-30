@@ -6,11 +6,11 @@ public class App {
     public static void main(String[] args) {
 
         String gameIndex;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scrChoseTheGame = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.print("1 - Greet\n\r2 - Even\n\r0 - Exit\n\rYour choice: ");
-        gameIndex = scanner.nextLine();
+        gameIndex = scrChoseTheGame.nextLine();
 
         switch (gameIndex) {
             case "0":
@@ -23,7 +23,6 @@ public class App {
                 break;
             default: System.out.println("no one variable are chosen please repeat.");
         }
-
-        scanner.close();
+        scrChoseTheGame.close();
     }
 }

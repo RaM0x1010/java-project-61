@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Cli {
     public static String getUserInput() {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scrGreeting = new Scanner(System.in);
 
         System.out.print("What is your name? ");
-        String userName = scanner.nextLine();
+        String userName = scrGreeting.nextLine();
         System.out.println("Hello, " + userName + "!");
 
-        scanner.close();
+        scrGreeting.close();
 
         return userName;
     }
