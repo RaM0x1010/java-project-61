@@ -35,32 +35,32 @@ public class EvenNumbers {
         System.out.println("Hello, " + userName + "!");
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            for (int i = 0; i < 3; i++) {
-                int randomNumber = random.nextInt(max - min + 1) + min;
-                boolean isEven = randomNumber % 2 == 0;
-                System.out.println("Question: " + randomNumber);
-                System.out.print("Your answer: ");
+        for (int i = 0; i < 3; i++) {
+            int randomNumber = random.nextInt(max - min + 1) + min;
+            boolean isEven = randomNumber % 2 == 0;
+            System.out.println("Question: " + randomNumber);
+            System.out.print("Your answer: ");
 
-                String answer = scanner.nextLine();
+            String answer = scanner.nextLine();
 
-                if (isEven) {
-                    if (answer.equals("yes")) {
-                        correctAnswer();
-                    } else {
-                        wrongAnswer(userName, answer);
-                        successPass = false;
-                        break;
-                    }
+            if (isEven) {
+                if (answer.equals("yes")) {
+                    correctAnswer();
                 } else {
-                    if (answer.equals("no")) {
-                        correctAnswer();
-                    } else {
-                        wrongAnswer(userName, answer);
-                        successPass = false;
-                        break;
-                    }
+                    wrongAnswer(userName, answer);
+                    successPass = false;
+                    break;
+                }
+            } else {
+                if (answer.equals("no")) {
+                    correctAnswer();
+                } else {
+                    wrongAnswer(userName, answer);
+                    successPass = false;
+                    break;
                 }
             }
+        }
         scanner.close();
             if (successPass) {
                 System.out.println("Congratulations, " + userName + "!");
