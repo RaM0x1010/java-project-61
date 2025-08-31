@@ -1,6 +1,5 @@
 package hexlet.code;
 
-//import java.util.Random;
 import java.util.Scanner;
 
 public class EvenNumbers {
@@ -18,14 +17,8 @@ public class EvenNumbers {
         System.out.println("Let's try again, " + userName + "!");
     }
 
-    public static String greeting(Scanner scanner) {
-
-        return scanner.nextLine();
-    }
-
     public static void playTheGame() {
         Scanner scanner = new Scanner(System.in);
-        //Random random = new Random();
         boolean successPass = true;
         int min = 1;
         int max = 100;
@@ -37,7 +30,6 @@ public class EvenNumbers {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
             int randomNumber = (int) (Math.random() * 100) + 1;
-            //random.nextInt(max - min + 1) + min;
             boolean isEven = randomNumber % 2 == 0;
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");

@@ -8,7 +8,16 @@ public class App {
         Scanner scrChoseTheGame = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
-        System.out.print("1 - Greet\n\r2 - Even\n\r0 - Exit\n\rYour choice: ");
+        System.out.print("""
+                1 - Greet
+                \r\
+                2 - Even
+                \r\
+                3 - Calc
+                \r\
+                0 - Exit
+                \r\
+                Your choice:\s""");
         String gameIndex = scrChoseTheGame.nextLine();
 
         switch (gameIndex) {
