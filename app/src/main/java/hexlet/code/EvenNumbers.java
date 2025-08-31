@@ -62,8 +62,8 @@ public class EvenNumbers {
             }
         }
         scanner.close();
-            if (successPass) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+        if (successPass) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
     }
 }

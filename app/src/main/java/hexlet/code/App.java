@@ -20,6 +20,9 @@ public class App {
             case "2":
                 EvenNumbers.playTheGame();
                 break;
+            case "3":
+                System.out.println("new game");
+                break;
             default: System.out.println("no one variable are chosen please repeat.");
         }
         scrChoseTheGame.close();
