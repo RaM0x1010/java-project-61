@@ -19,7 +19,7 @@ public class Calc {
 
         for (int i = 0; i < 3; i++) {
 
-            int magicNumberIndexOperator = (int) (Math.random() * max) + min;
+            int magicNumberIndexOperator = (int) (Math.random() * ((max - min) + 1));
             int operandOne = (int) (Math.random() * max) + min;
             int operandTwo = (int) (Math.random() * max) + min;
             int operationIndex  = magicNumberIndexOperator % countOperations;
