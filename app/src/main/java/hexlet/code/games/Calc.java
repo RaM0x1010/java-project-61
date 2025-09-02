@@ -34,13 +34,15 @@ public class Calc {
                 case 2:
                     result = operandOne * operandTwo;
                     break;
+                default:
+                    System.out.println("no case for that");
             }
 
             System.out.println("Question: " + operandOne + " " + operators[operationIndex] + " " + operandTwo);
             System.out.print("Your answer: ");
             String answer = scanner.nextLine();
 
-            if(answer.equals(String.valueOf(result))) {
+            if (answer.equals(String.valueOf(result))) {
                 System.out.println("Correct!");
             } else {
                 successPass = false;
