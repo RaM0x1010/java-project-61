@@ -1,5 +1,8 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.EvenNumbers;
+
 import java.util.Scanner;
 
 public class App {
@@ -30,7 +33,7 @@ public class App {
                 EvenNumbers.playTheGame();
                 break;
             case "3":
-                System.out.println("new game");
+                Calc.playTheGame();
                 break;
             default: System.out.println("no one variable are chosen please repeat.");
         }

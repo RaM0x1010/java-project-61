@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Scanner;
 
@@ -29,7 +29,7 @@ public class EvenNumbers {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
-            int randomNumber = (int) (Math.random() * 100) + 1;
+            int randomNumber = (int) (Math.random() * max) + min;
             boolean isEven = randomNumber % 2 == 0;
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
