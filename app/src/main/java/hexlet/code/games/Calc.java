@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Calc {
     public static void playTheGame() {
+        //Тут нужно создать экземпляр класса Engine и взаимодействовать с пользователем через него
         Scanner scanner = new Scanner(System.in);
         boolean successPass = true;
         int min = 1;
