@@ -24,14 +24,13 @@ public class Engine {
 
     public boolean checkAnswer(String answer, int answerNumber) {
         boolean result = true;
-        switch(this.gameIndex) {
+        switch (this.gameIndex) {
             case "2":
                 if (answerNumber % 2 == 0) {
                     if (answer.equals("yes")) {
                         correctAnswer();
                     } else {
                         wrongAnswer(answer);
-                        finishMessage(false);
                         return false;
                     }
                 } else {
@@ -39,14 +38,20 @@ public class Engine {
                         correctAnswer();
                     } else {
                         wrongAnswer(answer);
-                        finishMessage(false);
                         return false;
                     }
                 }
                 break;
             case "3":
-                System.out.println("sss");;
+                if (answer.equals(String.valueOf(answerNumber))) {
+                    correctAnswer();
+                } else {
+                    wrongAnswer(answer, answerNumber);
+                    return false;
+                }
                 break;
+            default:
+                System.out.println("Something is gone wrong!");
         }
         return result;
     }
@@ -74,6 +79,12 @@ public class Engine {
         } else if (answer.equals("no")) {
             System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
         }
+        this.finishMessage(false);
+    }
+
+    public void wrongAnswer(String answer, int answerNum) {
+        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + answerNum + "'.");
+        finishMessage(false);
     }
 
     public void gameRules() {
@@ -84,6 +95,8 @@ public class Engine {
             case "3":
                 System.out.println("What is the result of the expression?");
                 break;
+            default:
+                System.out.println("Something is gone wrong!");
         }
     }
 

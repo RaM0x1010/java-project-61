@@ -1,22 +1,20 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class Calc {
     public static void playTheGame() {
-        //Тут нужно создать экземпляр класса Engine и взаимодействовать с пользователем через него
-        Scanner scanner = new Scanner(System.in);
-        boolean successPass = true;
+        boolean result = true;
         int min = 1;
         int max = 100;
         int countOperations = 3;
-        int result = 0;
+        int resultNum = 0;
         String[] operators = {"-", "+", "*"};
-
-        System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
-        String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        Engine en = new Engine("3", new Scanner(System.in));
+        en.greeting();
+        en.gameRules();
 
         for (int i = 0; i < 3; i++) {
 
@@ -27,37 +25,28 @@ public class Calc {
 
             switch (operationIndex) {
                 case 0:
-                    result = operandOne - operandTwo;
+                    resultNum = operandOne - operandTwo;
                     break;
                 case 1:
-                    result = operandOne + operandTwo;
+                    resultNum = operandOne + operandTwo;
                     break;
                 case 2:
-                    result = operandOne * operandTwo;
+                    resultNum = operandOne * operandTwo;
                     break;
                 default:
-                    System.out.println("no case for that");
+                    System.out.println("Something is gone wrong!");
             }
 
-            System.out.println("Question: " + operandOne + " " + operators[operationIndex] + " " + operandTwo);
-            System.out.print("Your answer: ");
-            String answer = scanner.nextLine();
+            en.askQuestion(operandOne + " " + operators[operationIndex] + " " + operandTwo);
+            result = en.checkAnswer(en.getScr().nextLine(), resultNum);
 
-            if (answer.equals(String.valueOf(result))) {
-                System.out.println("Correct!");
-            } else {
-                successPass = false;
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-                System.out.println("Let's try again, " + userName);
+            if (!result) {
                 break;
+            } else if (i == 2) {
+                en.finishMessage(true);
             }
-
-
         }
 
-        scanner.close();
-        if (successPass) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        en.getScr().close();
     }
 }
