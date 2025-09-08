@@ -10,20 +10,22 @@ public class EvenNumbers {
         boolean result;
         int min = 1;
         int max = 100;
-        Engine en = new Engine("2", new Scanner(System.in));
-        en.greeting();
-        en.gameRules();
+        Engine.setGameIndexEngine("2");
+        Engine.setInputUserText(new Scanner(System.in));
+
+        Engine.greeting();
+        Engine.gameRules();
 
         for (int i = 0; i < 3; i++) {
             int randomNumber = (int) (Math.random() * max) + min;
-            en.askQuestion(String.valueOf(randomNumber));
-            result = en.checkAnswer(en.getScr().nextLine(), randomNumber);
+            Engine.askQuestion(String.valueOf(randomNumber));
+            result = Engine.checkAnswer(Engine.getScr().nextLine(), randomNumber);
             if (!result) {
                 break;
             } else if (i == 2) {
-                en.finishMessage(true);
+                Engine.finishMessage(true);
             }
         }
-        en.getScr().close();
+        Engine.getScr().close();
     }
 }

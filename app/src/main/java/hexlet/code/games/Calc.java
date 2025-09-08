@@ -12,9 +12,10 @@ public class Calc {
         int countOperations = 3;
         int resultNum = 0;
         String[] operators = {"-", "+", "*"};
-        Engine en = new Engine("3", new Scanner(System.in));
-        en.greeting();
-        en.gameRules();
+        Engine.setGameIndexEngine("3");
+        Engine.setInputUserText(new Scanner(System.in));
+        Engine.greeting();
+        Engine.gameRules();
 
         for (int i = 0; i < 3; i++) {
 
@@ -37,16 +38,16 @@ public class Calc {
                     System.out.println("Something is gone wrong!");
             }
 
-            en.askQuestion(operandOne + " " + operators[operationIndex] + " " + operandTwo);
-            result = en.checkAnswer(en.getScr().nextLine(), resultNum);
+            Engine.askQuestion(operandOne + " " + operators[operationIndex] + " " + operandTwo);
+            result = Engine.checkAnswer(Engine.getScr().nextLine(), resultNum);
 
             if (!result) {
                 break;
             } else if (i == 2) {
-                en.finishMessage(true);
+                Engine.finishMessage(true);
             }
         }
 
-        en.getScr().close();
+        Engine.getScr().close();
     }
 }

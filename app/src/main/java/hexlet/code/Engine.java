@@ -4,27 +4,27 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private String userName;
-    private String gameIndex;
-    private Scanner inputUserText;
+    private static String userNameEngine;
+    private static String gameIndexEngine;
+    private static Scanner inputUserTextEngine;
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public static void setUserName(String userName) {
+        Engine.userNameEngine = userName;
     }
 
-    public Scanner getScr() {
-        return this.inputUserText;
+    public static Scanner getScr() {
+        return Engine.inputUserTextEngine;
     }
 
-    public void greeting() {
+    public static void greeting() {
         System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
-        this.setUserName(inputUserText.nextLine());
-        System.out.println("Hello, " + this.userName + "!");
+        Engine.setUserName(Engine.inputUserTextEngine.nextLine());
+        System.out.println("Hello, " + Engine.userNameEngine + "!");
     }
 
-    public boolean checkAnswer(String answer, int answerNumber) {
+    public static boolean checkAnswer(String answer, int answerNumber) {
         boolean result = true;
-        switch (this.gameIndex) {
+        switch (Engine.gameIndexEngine) {
             case "2":
                 if (answerNumber % 2 == 0) {
                     if (answer.equals("yes")) {
@@ -42,7 +42,7 @@ public class Engine {
                     }
                 }
                 break;
-            case "3":
+            case "3", "4":
                 if (answer.equals(String.valueOf(answerNumber))) {
                     correctAnswer();
                 } else {
@@ -56,52 +56,57 @@ public class Engine {
         return result;
     }
 
-    public void askQuestion(String expression) {
+    public static void askQuestion(String expression) {
         System.out.println("Question: " + expression);
         System.out.print("Your answer: ");
     }
 
-    public void finishMessage(boolean isSuccess) {
+    public static void finishMessage(boolean isSuccess) {
         if (isSuccess) {
-            System.out.println("Congratulations, " + this.userName);
+            System.out.println("Congratulations, " + Engine.userNameEngine);
         } else {
-            System.out.println("Let's try again, " + this.userName);
+            System.out.println("Let's try again, " + Engine.userNameEngine);
         }
     }
 
-    public void correctAnswer() {
+    public static void correctAnswer() {
         System.out.println("Correct!");
     }
 
-    public void wrongAnswer(String answer) {
+    public static void wrongAnswer(String answer) {
         if (answer.equals("yes")) {
             System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         } else if (answer.equals("no")) {
             System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
         }
-        this.finishMessage(false);
+        Engine.finishMessage(false);
     }
 
-    public void wrongAnswer(String answer, int answerNum) {
+    public static void wrongAnswer(String answer, int answerNum) {
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + answerNum + "'.");
-        finishMessage(false);
+        Engine.finishMessage(false);
     }
 
-    public void gameRules() {
-        switch (this.gameIndex) {
+    public static void gameRules() {
+        switch (Engine.gameIndexEngine) {
             case "2":
                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 break;
             case "3":
                 System.out.println("What is the result of the expression?");
                 break;
+            case "4":
+                System.out.println("Find the greatest common divisor of given numbers.");
+                break;
             default:
                 System.out.println("Something is gone wrong!");
         }
     }
+    public static void setGameIndexEngine(String gameIndex) {
+        Engine.gameIndexEngine = gameIndex;
+    }
 
-    public Engine(String gameIndex, Scanner scr) {
-        this.gameIndex = gameIndex;
-        this.inputUserText = scr;
+    public static void setInputUserText(Scanner scr) {
+        Engine.inputUserTextEngine = scr;
     }
 }

@@ -1,7 +1,8 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
 import hexlet.code.games.EvenNumbers;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -16,6 +17,8 @@ public class App {
                 2 - Even
                 \r\
                 3 - Calc
+                \r\
+                4 - GCD
                 \r\
                 0 - Exit
                 \r\
@@ -33,6 +36,9 @@ public class App {
                 break;
             case "3":
                 Calc.playTheGame();
+                break;
+            case "4":
+                GCD.playTheGame();
                 break;
             default: System.out.println("no one variable are chosen please repeat.");
         }

@@ -1,0 +1,42 @@
+package hexlet.code.games;
+
+import hexlet.code.Engine;
+
+import java.util.Scanner;
+
+public class GCD {
+    public static int calculateGCD(int a, int b) {
+        int varGCD = a;
+        while (b != 0) {
+            varGCD = b;
+            b = a % b;
+            a = varGCD;
+        }
+        return varGCD;
+    }
+
+    public static void playTheGame() {
+        boolean result;
+        int min = 1;
+        int max = 100;
+        Engine.setGameIndexEngine("4");
+        Engine.setInputUserText(new Scanner(System.in));
+
+        Engine.greeting();
+        Engine.gameRules();
+
+        for (int i = 0; i < 3; i++) {
+            int dividend = (int) (Math.random() * max) + min;
+            int divisor = (int) (Math.random() * max);
+            int resultGCD = GCD.calculateGCD(dividend, divisor);
+            Engine.askQuestion(dividend + " " + divisor);
+            result = Engine.checkAnswer(Engine.getScr().nextLine(), resultGCD);
+            if (!result) {
+                break;
+            } else if (i == 2) {
+                Engine.finishMessage(true);
+            }
+        }
+        Engine.getScr().close();
+    }
+}
