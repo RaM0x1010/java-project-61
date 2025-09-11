@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.EvenNumbers;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -19,6 +20,8 @@ public class App {
                 3 - Calc
                 \r\
                 4 - GCD
+                \r\
+                5 - Progression
                 \r\
                 0 - Exit
                 \r\
@@ -40,7 +43,10 @@ public class App {
             case "4":
                 GCD.playTheGame();
                 break;
-            default: System.out.println("no one variable are chosen please repeat.");
+            case "5":
+                Progression.playTheGame();
+                break;
+            default: System.out.println("No one variable are chosen please repeat.");
         }
         scrChoseTheGame.close();
     }

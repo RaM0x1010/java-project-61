@@ -42,7 +42,7 @@ public class Engine {
                     }
                 }
                 break;
-            case "3", "4":
+            case "3", "4", "5":
                 if (answer.equals(String.valueOf(answerNumber))) {
                     correctAnswer();
                 } else {
@@ -98,6 +98,9 @@ public class Engine {
             case "4":
                 System.out.println("Find the greatest common divisor of given numbers.");
                 break;
+            case "5":
+                System.out.println("What number is missing in the progression?");
+                break;
             default:
                 System.out.println("Something is gone wrong!");
         }
@@ -108,5 +111,19 @@ public class Engine {
 
     public static void setInputUserText(Scanner scr) {
         Engine.inputUserTextEngine = scr;
+    }
+
+    public static int randomizerNumbers() {
+        int min = 1;
+        int max = 100;
+        return (int) (Math.random() * max) + min;
+    }
+
+    public static int randomizerNumbers(int max) {
+        return (int) (Math.random() * (max + 1));
+    }
+
+    public static int randomizerNumbers(int min, int max) {
+        return (int) (Math.random() * ((max - min) + 1)) + min;
     }
 }

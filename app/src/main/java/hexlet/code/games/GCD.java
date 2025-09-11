@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class GCD {
     public static int calculateGCD(int a, int b) {
-        int varGCD = a;
+        int valueGCD = a;
         while (b != 0) {
-            varGCD = b;
+            valueGCD = b;
             b = a % b;
-            a = varGCD;
+            a = valueGCD;
         }
-        return varGCD;
+        return valueGCD;
     }
 
     public static void playTheGame() {
