@@ -16,25 +16,25 @@ public class Engine {
     }
 
     public static int getNumberOfAttempts() {
-        return Engine.NUMBER_OF_ATTEMPTS;
+        return NUMBER_OF_ATTEMPTS;
     }
 
     public static int getMinNumberOfRange() {
-        return Engine.MIN_NUMBER_OF_RANGE;
+        return MIN_NUMBER_OF_RANGE;
     }
 
     public static int getMaxNumberOfRange() {
-        return Engine.MAX_NUMBER_OF_RANGE;
+        return MAX_NUMBER_OF_RANGE;
     }
 
     public static Scanner getScr() {
-        return Engine.inputUserTextEngine;
+        return inputUserTextEngine;
     }
 
     public static void greeting() {
         System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
-        Engine.setUserName(Engine.inputUserTextEngine.nextLine());
-        System.out.println("Hello, " + Engine.userNameEngine + "!");
+        setUserName(inputUserTextEngine.nextLine());
+        System.out.println("Hello, " + userNameEngine + "!");
     }
 
     public static boolean checkAnswer(String answer, int answerNumber) {
@@ -74,9 +74,9 @@ public class Engine {
 
     public static void finishMessage(boolean isSuccess) {
         if (isSuccess) {
-            System.out.println("Congratulations, " + Engine.userNameEngine + "!");
+            System.out.println("Congratulations, " + userNameEngine + "!");
         } else {
-            System.out.println("Let's try again, " + Engine.userNameEngine + "!");
+            System.out.println("Let's try again, " + userNameEngine + "!");
         }
     }
 
@@ -90,16 +90,16 @@ public class Engine {
         } else if (answer.equals("no")) {
             System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
         }
-        Engine.finishMessage(false);
+        finishMessage(false);
     }
 
     public static void wrongAnswer(String answer, int answerNum) {
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + answerNum + "'.");
-        Engine.finishMessage(false);
+        finishMessage(false);
     }
 
     public static void gameRules() {
-        switch (Engine.gameIndexEngine) {
+        switch (gameIndexEngine) {
             case "2":
                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 break;
@@ -120,15 +120,15 @@ public class Engine {
         }
     }
     public static void setGameIndexEngine(String gameIndex) {
-        Engine.gameIndexEngine = gameIndex;
+        gameIndexEngine = gameIndex;
     }
 
     public static void setInputUserText(Scanner scr) {
-        Engine.inputUserTextEngine = scr;
+        inputUserTextEngine = scr;
     }
 
     public static int randomizerNumbers() {
-        return (int) (Math.random() * Engine.getMaxNumberOfRange()) + Engine.getMinNumberOfRange();
+        return (int) (Math.random() * getMaxNumberOfRange()) + getMinNumberOfRange();
     }
 
     public static int randomizerNumbers(int max) {
