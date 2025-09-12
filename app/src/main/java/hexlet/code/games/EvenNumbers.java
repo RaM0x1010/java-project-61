@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class EvenNumbers {
 
+    public static boolean isItEven(int num) {
+        return num % 2 == 0;
+    }
+
     public static void playTheGame() {
         boolean result;
-        int min = 1;
-        int max = 100;
         Engine.setGameIndexEngine("2");
         Engine.setInputUserText(new Scanner(System.in));
 
@@ -17,9 +19,9 @@ public class EvenNumbers {
         Engine.gameRules();
 
         for (int i = 0; i < 3; i++) {
-            int randomNumber = (int) (Math.random() * max) + min;
+            int randomNumber = Engine.randomizerNumbers();
             Engine.askQuestion(String.valueOf(randomNumber));
-            result = Engine.checkAnswer(Engine.getScr().nextLine(), randomNumber);
+            result = Engine.checkAnswer(Engine.getScr().nextLine(), isItEven(randomNumber));
             if (!result) {
                 break;
             } else if (i == 2) {

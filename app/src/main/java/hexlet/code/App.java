@@ -1,8 +1,9 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenNumbers;
 import hexlet.code.games.Calc;
+import hexlet.code.games.EvenNumbers;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import java.util.Scanner;
@@ -22,6 +23,8 @@ public class App {
                 4 - GCD
                 \r\
                 5 - Progression
+                \r\
+                6 - Prime
                 \r\
                 0 - Exit
                 \r\
@@ -45,6 +48,9 @@ public class App {
                 break;
             case "5":
                 Progression.playTheGame();
+                break;
+            case "6":
+                Prime.playTheGame();
                 break;
             default: System.out.println("No one variable are chosen please repeat.");
         }

@@ -23,37 +23,33 @@ public class Engine {
     }
 
     public static boolean checkAnswer(String answer, int answerNumber) {
-        boolean result = true;
-        switch (Engine.gameIndexEngine) {
-            case "2":
-                if (answerNumber % 2 == 0) {
-                    if (answer.equals("yes")) {
-                        correctAnswer();
-                    } else {
-                        wrongAnswer(answer);
-                        return false;
-                    }
-                } else {
-                    if (answer.equals("no")) {
-                        correctAnswer();
-                    } else {
-                        wrongAnswer(answer);
-                        return false;
-                    }
-                }
-                break;
-            case "3", "4", "5":
-                if (answer.equals(String.valueOf(answerNumber))) {
-                    correctAnswer();
-                } else {
-                    wrongAnswer(answer, answerNumber);
-                    return false;
-                }
-                break;
-            default:
-                System.out.println("Something is gone wrong!");
+        if (answer.equals(String.valueOf(answerNumber))) {
+            correctAnswer();
+            return true;
+        } else {
+            wrongAnswer(answer, answerNumber);
+            return false;
         }
-        return result;
+    }
+
+    public static boolean checkAnswer(String answer, boolean correctAnswer) {
+        if (correctAnswer) {
+            if (answer.equals("yes")) {
+                correctAnswer();
+                return true;
+            } else {
+                wrongAnswer(answer);
+                return false;
+            }
+        } else {
+            if (answer.equals("no")) {
+                correctAnswer();
+                return true;
+            } else {
+                wrongAnswer(answer);
+                return false;
+            }
+        }
     }
 
     public static void askQuestion(String expression) {
@@ -100,6 +96,9 @@ public class Engine {
                 break;
             case "5":
                 System.out.println("What number is missing in the progression?");
+                break;
+            case "6":
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 break;
             default:
                 System.out.println("Something is gone wrong!");
