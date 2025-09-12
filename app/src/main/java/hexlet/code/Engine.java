@@ -8,6 +8,8 @@ public class Engine {
     private static String gameIndexEngine;
     private static Scanner inputUserTextEngine;
     private static final int NUMBER_OF_ATTEMPTS = 3;
+    private static final int MIN_NUMBER_OF_RANGE = 1;
+    private static final int MAX_NUMBER_OF_RANGE = 100;
 
     public static void setUserName(String userName) {
         Engine.userNameEngine = userName;
@@ -16,6 +18,15 @@ public class Engine {
     public static int getNumberOfAttempts() {
         return Engine.NUMBER_OF_ATTEMPTS;
     }
+
+    public static int getMinNumberOfRange() {
+        return Engine.MIN_NUMBER_OF_RANGE;
+    }
+
+    public static int getMaxNumberOfRange() {
+        return Engine.MAX_NUMBER_OF_RANGE;
+    }
+
     public static Scanner getScr() {
         return Engine.inputUserTextEngine;
     }
@@ -117,9 +128,7 @@ public class Engine {
     }
 
     public static int randomizerNumbers() {
-        int MIN_NUMBER_OF_RANGE = 1;
-        int MAX_NUMBER_OF_RANGE = 100;
-        return (int) (Math.random() * MAX_NUMBER_OF_RANGE) + MIN_NUMBER_OF_RANGE;
+        return (int) (Math.random() * Engine.getMaxNumberOfRange()) + Engine.getMinNumberOfRange();
     }
 
     public static int randomizerNumbers(int max) {
