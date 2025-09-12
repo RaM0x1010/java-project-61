@@ -17,8 +17,7 @@ public class Engine {
     }
 
     public static void greeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
+        System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
         Engine.setUserName(Engine.inputUserTextEngine.nextLine());
         System.out.println("Hello, " + Engine.userNameEngine + "!");
     }
@@ -60,7 +59,7 @@ public class Engine {
 
     public static void finishMessage(boolean isSuccess) {
         if (isSuccess) {
-            System.out.println("Congratulations, " + Engine.userNameEngine);
+            System.out.println("Congratulations, " + Engine.userNameEngine + "!");
         } else {
             System.out.println("Let's try again, " + Engine.userNameEngine);
         }

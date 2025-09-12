@@ -11,9 +11,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scrChoseTheGame = new Scanner(System.in);
-        /*System.out.print("""
-                Please enter the game number and press Enter.
-                \r\
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.print("""
                 1 - Greet
                 \r\
                 2 - Even
@@ -29,19 +28,7 @@ public class App {
                 0 - Exit
                 \r\
                 Your choice:\s""");
-
-         */
-
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
-        System.out.print("Your choice: ");
         String gameIndex = scrChoseTheGame.nextLine();
-        System.out.println();
 
         switch (gameIndex) {
             case "0":
