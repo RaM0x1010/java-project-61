@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scrChoseTheGame = new Scanner(System.in);
-
-        System.out.println("Please enter the game number and press Enter.");
         System.out.print("""
+                Please enter the game number and press Enter.
+                \r\
                 1 - Greet
                 \r\
                 2 - Even
