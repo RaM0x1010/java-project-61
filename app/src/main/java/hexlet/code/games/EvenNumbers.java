@@ -18,7 +18,7 @@ public class EvenNumbers {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
             int randomNumber = Engine.randomizerNumbers();
             Engine.askQuestion(String.valueOf(randomNumber));
             result = Engine.checkAnswer(Engine.getScr().nextLine(), isItEven(randomNumber));

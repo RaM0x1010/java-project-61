@@ -17,7 +17,7 @@ public class Calc {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
 
             int magicNumberIndexOperator = (int) (Math.random() * ((max - min) + 1));
             int operandOne = (int) (Math.random() * max) + min;

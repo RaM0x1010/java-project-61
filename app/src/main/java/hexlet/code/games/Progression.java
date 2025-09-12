@@ -31,8 +31,10 @@ public class Progression {
     }
 
     public static void playTheGame() {
-        int minLengthProgression = 5;
-        int maxLengthProgression = 10;
+        int minLengthOfProgression = 5;
+        int maxLengthOfProgression = 10;
+        int minLengthOfDifference = 1;
+        int maxLengthOfDifference = 5;
         boolean result;
 
         Engine.setGameIndexEngine("5");
@@ -41,10 +43,10 @@ public class Progression {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < 3; i++) {
-            int lengthProgression = Engine.randomizerNumbers(minLengthProgression, maxLengthProgression);
+        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+            int lengthProgression = Engine.randomizerNumbers(minLengthOfProgression, maxLengthOfProgression);
             int startNumber = Engine.randomizerNumbers();
-            int difference = Engine.randomizerNumbers(1, 5);
+            int difference = Engine.randomizerNumbers(minLengthOfDifference, maxLengthOfDifference);
             int missedNumber = Engine.randomizerNumbers(lengthProgression - 1);
             int[] progression = createProgression(lengthProgression, startNumber, difference);
 

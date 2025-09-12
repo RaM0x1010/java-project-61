@@ -17,17 +17,16 @@ public class GCD {
 
     public static void playTheGame() {
         boolean result;
-        int min = 1;
-        int max = 100;
+        int maxValueOfDivisor = 100;
         Engine.setGameIndexEngine("4");
         Engine.setInputUserText(new Scanner(System.in));
 
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < 3; i++) {
-            int dividend = (int) (Math.random() * max) + min;
-            int divisor = (int) (Math.random() * max);
+        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+            int dividend = Engine.randomizerNumbers();
+            int divisor = Engine.randomizerNumbers(maxValueOfDivisor);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
             Engine.askQuestion(dividend + " " + divisor);
             result = Engine.checkAnswer(Engine.getScr().nextLine(), resultGCD);
