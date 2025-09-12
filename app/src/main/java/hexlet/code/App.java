@@ -40,8 +40,9 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-
         String gameIndex = scrChoseTheGame.nextLine();
+        System.out.println();
+
         switch (gameIndex) {
             case "0":
                 break;

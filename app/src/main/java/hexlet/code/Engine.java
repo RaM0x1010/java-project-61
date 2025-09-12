@@ -17,7 +17,8 @@ public class Engine {
     }
 
     public static void greeting() {
-        System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
         Engine.setUserName(Engine.inputUserTextEngine.nextLine());
         System.out.println("Hello, " + Engine.userNameEngine + "!");
     }
