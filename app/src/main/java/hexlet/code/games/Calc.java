@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Calc {
     public static void playTheGame() {
         boolean result = true;
-        int min = 1;
-        int max = 100;
-        int countOperations = 3;
+        int NUMBER_OF_OPERATIONS = 3;
+        int MIN_RANDOM_VALUE = 0;
+        int MAX_RANDOM_VALUE = 3;
         int resultNum = 0;
         String[] operators = {"-", "+", "*"};
         Engine.setGameIndexEngine("3");
@@ -19,10 +19,9 @@ public class Calc {
 
         for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
 
-            int magicNumberIndexOperator = (int) (Math.random() * ((max - min) + 1));
-            int operandOne = (int) (Math.random() * max) + min;
-            int operandTwo = (int) (Math.random() * max) + min;
-            int operationIndex  = magicNumberIndexOperator % countOperations;
+            int operandOne = Engine.randomizerNumbers();
+            int operandTwo = Engine.randomizerNumbers();
+            int operationIndex  = Engine.randomizerNumbers(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE) % NUMBER_OF_OPERATIONS;
 
             switch (operationIndex) {
                 case 0:

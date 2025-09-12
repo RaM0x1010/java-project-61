@@ -17,7 +17,7 @@ public class GCD {
 
     public static void playTheGame() {
         boolean result;
-        int maxValueOfDivisor = 100;
+        int MAX_VALUE_DIVISOR = 100;
         Engine.setGameIndexEngine("4");
         Engine.setInputUserText(new Scanner(System.in));
 
@@ -26,7 +26,7 @@ public class GCD {
 
         for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
             int dividend = Engine.randomizerNumbers();
-            int divisor = Engine.randomizerNumbers(maxValueOfDivisor);
+            int divisor = Engine.randomizerNumbers(MAX_VALUE_DIVISOR);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
             Engine.askQuestion(dividend + " " + divisor);
             result = Engine.checkAnswer(Engine.getScr().nextLine(), resultGCD);
