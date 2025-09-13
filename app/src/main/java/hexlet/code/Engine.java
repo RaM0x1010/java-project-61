@@ -134,9 +134,7 @@ public class Engine {
         return RANDOMIZED_OBJ.nextInt(getMinNumberOfRange(), getMaxNumberOfRange());
     }
 
-    public static int randomizerNumbers(int max) {
-        return RANDOMIZED_OBJ.nextInt(max);
-    }
+    public static int randomizerNumbers(int max) { return RANDOMIZED_OBJ.nextInt(max); }
 
     public static int randomizerNumbers(int min, int max) {
         return RANDOMIZED_OBJ.nextInt(min, max);
