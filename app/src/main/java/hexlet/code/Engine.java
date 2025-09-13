@@ -1,15 +1,25 @@
 package hexlet.code;
 
+import java.security.SecureRandom;
 import java.util.Scanner;
+
 
 public class Engine {
 
+    private static final SecureRandom random = new SecureRandom();
     private static String userNameEngine;
     private static String gameIndexEngine;
     private static Scanner inputUserTextEngine;
     private static final int NUMBER_OF_ATTEMPTS = 3;
     private static final int MIN_NUMBER_OF_RANGE = 1;
     private static final int MAX_NUMBER_OF_RANGE = 100;
+
+
+    /*
+    * SecureRandom random = new SecureRandom();
+byte bytes[] = new byte[20];
+random.nextBytes(bytes);
+    * */
 
     public static void setUserName(String userName) {
         Engine.userNameEngine = userName;
@@ -128,14 +138,14 @@ public class Engine {
     }
 
     public static int randomizerNumbers() {
-        return (int) (Math.random() * getMaxNumberOfRange()) + getMinNumberOfRange();
+        return random.nextInt(getMaxNumberOfRange(), getMinNumberOfRange());
     }
 
     public static int randomizerNumbers(int max) {
-        return (int) (Math.random() * (max + 1));
+        return random.nextInt(getMaxNumberOfRange());
     }
 
     public static int randomizerNumbers(int min, int max) {
-        return (int) (Math.random() * ((max - min) + 1)) + min;
+        return random.nextInt(min, max);
     }
 }
