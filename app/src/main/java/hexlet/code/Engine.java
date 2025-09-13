@@ -6,20 +6,13 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static final SecureRandom random = new SecureRandom();
+    private static final SecureRandom RANDOMIZED_OBJ = new SecureRandom();
     private static String userNameEngine;
     private static String gameIndexEngine;
     private static Scanner inputUserTextEngine;
     private static final int NUMBER_OF_ATTEMPTS = 3;
     private static final int MIN_NUMBER_OF_RANGE = 1;
     private static final int MAX_NUMBER_OF_RANGE = 100;
-
-
-    /*
-    * SecureRandom random = new SecureRandom();
-byte bytes[] = new byte[20];
-random.nextBytes(bytes);
-    * */
 
     public static void setUserName(String userName) {
         Engine.userNameEngine = userName;
@@ -138,14 +131,14 @@ random.nextBytes(bytes);
     }
 
     public static int randomizerNumbers() {
-        return random.nextInt(getMaxNumberOfRange(), getMinNumberOfRange());
+        return RANDOMIZED_OBJ.nextInt(getMinNumberOfRange(), getMaxNumberOfRange());
     }
 
     public static int randomizerNumbers(int max) {
-        return random.nextInt(getMaxNumberOfRange());
+        return RANDOMIZED_OBJ.nextInt(max);
     }
 
     public static int randomizerNumbers(int min, int max) {
-        return random.nextInt(min, max);
+        return RANDOMIZED_OBJ.nextInt(min, max);
     }
 }
