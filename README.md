@@ -16,6 +16,24 @@ The point of this game: a random number is displayed on the screen, you need to 
 
 ### Calc
 
+The point of this game: a random expression is displayed on the screen, in which you need to add, subtract or multiply two numbers and enter the answer.
+
+### GCD
+
+The point of this game: a two random numbers are displayed on the screen. You need to calculate the greatest common divisor of two given numbers and enter the answer.
+
+### Progression 
+
 The point of this game: 
+
+### Prime
+
+The point of this game: 
+
+---
+
+#### Run
+
+```sss```
 
 [![asciicast](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af.svg)](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af)
