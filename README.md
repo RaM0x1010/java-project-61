@@ -14,21 +14,31 @@ If the player give wrong an answer, the game goes end. Each of game interacts wi
 
 The point of this game: a random number is displayed on the screen, you need to answer 'yes' if the number is even, or 'no' if it is odd.
 
+[![asciicast](https://asciinema.org/a/eZXjxxPsv8zUEQBcEL2HR8hlD.svg)](https://asciinema.org/a/eZXjxxPsv8zUEQBcEL2HR8hlD)
+
 ### Calc
 
 The point of this game: a random expression is displayed on the screen, in which you need to add, subtract or multiply two numbers and enter the answer.
+
+[![asciicast](https://asciinema.org/a/6aMeHMB9DKK9tN06au4guGrJE.svg)](https://asciinema.org/a/6aMeHMB9DKK9tN06au4guGrJE)
 
 ### GCD
 
 The point of this game: a two random numbers are displayed on the screen. You need to calculate the greatest common divisor of two given numbers and enter the answer.
 
+[![asciicast](https://asciinema.org/a/oMgqz3D9IhOtfvLlWwWkZFll5.svg)](https://asciinema.org/a/oMgqz3D9IhOtfvLlWwWkZFll5)
+
 ### Progression 
 
 The point of this game: a sequence of numbers is displayed in which one number is missing. This number needs to be guessed.
 
+[![asciicast](https://asciinema.org/a/8YISibXXcVWwUTiZ6tK5ECn6e.svg)](https://asciinema.org/a/8YISibXXcVWwUTiZ6tK5ECn6e)
+
 ### Prime
 
 The point of this game: two numbers are displayed on the screen. You need to answer whether the number is prime or not.
+
+[![asciicast](https://asciinema.org/a/XBBYyCgFfBXu5I0aUMnUkJPjF.svg)](https://asciinema.org/a/XBBYyCgFfBXu5I0aUMnUkJPjF)
 
 ---
 
@@ -48,6 +58,3 @@ make install
 ```bash
 make run-dist
 ```
-
-
-[![asciicast](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af.svg)](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af)
