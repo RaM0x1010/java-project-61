@@ -24,16 +24,30 @@ The point of this game: a two random numbers are displayed on the screen. You ne
 
 ### Progression 
 
-The point of this game: 
+The point of this game: a sequence of numbers is displayed in which one number is missing. This number needs to be guessed.
 
 ### Prime
 
-The point of this game: 
+The point of this game: two numbers are displayed on the screen. You need to answer whether the number is prime or not.
 
 ---
 
-#### Run
+## Install and Riunning app
 
-```sss```
+To start playing the Brain Games you should install it first. 
+Go to project directory "java-project-61" and run following command in shell.
+
+## Install
+
+```bash
+make install
+```
+
+## Run
+
+```bash
+make run-dist
+```
+
 
 [![asciicast](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af.svg)](https://asciinema.org/a/McljPgdv747nyKrSioGO8R0af)
