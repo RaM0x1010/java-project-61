@@ -42,7 +42,7 @@ The point of this game: two numbers are displayed on the screen. You need to ans
 
 ---
 
-## Install and Riunning app
+## Install and running app
 
 To start playing the Brain Games you should install it first. 
 Go to project directory "java-project-61" and run following command in shell.
