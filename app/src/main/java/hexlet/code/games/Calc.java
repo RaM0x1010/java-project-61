@@ -5,13 +5,8 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
-    private static final int NUMBER_OF_OPERATIONS = 3;
     private static final int MIN_RANDOM_VALUE = 0;
     private static final int MAX_RANDOM_VALUE = 3;
-
-    public static int getNumberOfOperations() {
-        return NUMBER_OF_OPERATIONS;
-    }
 
     public static int getMinRandomValue() {
         return MIN_RANDOM_VALUE;
@@ -30,7 +25,7 @@ public class Calc {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
             int operandOne = Engine.randomizerNumbers();
             int operandTwo = Engine.randomizerNumbers();

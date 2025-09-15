@@ -61,7 +61,7 @@ public class Progression {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int lengthProgression = Engine.randomizerNumbers(getMinLengthProgression(), getMaxLengthProgression());
             int startNumber = Engine.randomizerNumbers();
             int difference = Engine.randomizerNumbers(getMinLengthDifference(), getMaxLengthDifference());

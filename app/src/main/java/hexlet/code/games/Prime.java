@@ -27,7 +27,7 @@ public class Prime {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int num = Engine.randomizerNumbers();
             Engine.askQuestion(String.valueOf(num));
             result = Engine.checkAnswer(Engine.getScr().nextLine(), isItPrimeNumber(num));

@@ -29,7 +29,7 @@ public class GCD {
         Engine.greeting();
         Engine.gameRules();
 
-        for (int i = 0; i < Engine.getNumberOfAttempts(); i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int dividend = Engine.randomizerNumbers();
             int divisor = Engine.randomizerNumbers(GCD.getMaxValueDivisor());
             int resultGCD = GCD.calculateGCD(dividend, divisor);
