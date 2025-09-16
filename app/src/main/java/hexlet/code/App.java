@@ -51,7 +51,7 @@ public class App {
             case "6":
                 Prime.playTheGame();
                 break;
-            default: System.out.println("No one variable are chosen please repeat.");
+            default: System.out.println("You entered " + gameIndex + "! There is no such game!");
         }
         scrChoseTheGame.close();
     }
