@@ -22,6 +22,10 @@ public class Engine {
         return inputUserTextEngine;
     }
 
+    public static void setGameIndexEngine(String gameIndex) {
+        gameIndexEngine = gameIndex;
+    }
+
     public static void greeting() {
         System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
         setUserName(inputUserTextEngine.nextLine());
@@ -109,9 +113,6 @@ public class Engine {
             default:
                 System.out.println("Something is gone wrong!");
         }
-    }
-    public static void setGameIndexEngine(String gameIndex) {
-        gameIndexEngine = gameIndex;
     }
 
     public static void setInputUserText(Scanner scr) {

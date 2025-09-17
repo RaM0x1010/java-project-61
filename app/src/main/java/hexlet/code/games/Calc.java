@@ -8,14 +8,6 @@ public class Calc {
     private static final int MIN_RANDOM_VALUE = 0;
     private static final int MAX_RANDOM_VALUE = 3;
 
-    public static int getMinRandomValue() {
-        return MIN_RANDOM_VALUE;
-    }
-
-    public static int getMaxRandomValue() {
-        return MAX_RANDOM_VALUE;
-    }
-
     public static void playTheGame() {
         boolean result = true;
         int resultNum = 0;
@@ -30,7 +22,7 @@ public class Calc {
             int operandOne = Engine.randomizerNumbers();
             int operandTwo = Engine.randomizerNumbers();
             int operationIndex  = Engine.randomizerNumbers(
-                    getMinRandomValue(), getMaxRandomValue()) % getMaxRandomValue();
+                    MIN_RANDOM_VALUE, MAX_RANDOM_VALUE) % MAX_RANDOM_VALUE;
 
             switch (operationIndex) {
                 case 0:

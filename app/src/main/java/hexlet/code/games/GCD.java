@@ -7,10 +7,6 @@ import java.util.Scanner;
 public class GCD {
     private static final int MAX_VALUE_DIVISOR = 100;
 
-    public static int getMaxValueDivisor() {
-        return GCD.MAX_VALUE_DIVISOR;
-    }
-
     public static int calculateGCD(int a, int b) {
         int valueGCD = a;
         while (b != 0) {
@@ -31,7 +27,7 @@ public class GCD {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int dividend = Engine.randomizerNumbers();
-            int divisor = Engine.randomizerNumbers(GCD.getMaxValueDivisor());
+            int divisor = Engine.randomizerNumbers(MAX_VALUE_DIVISOR);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
             Engine.askQuestion(dividend + " " + divisor);
             result = Engine.checkAnswer(Engine.getScr().nextLine(), resultGCD);

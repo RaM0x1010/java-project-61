@@ -10,22 +10,6 @@ public class Progression {
     private static final int MIN_LENGTH_DIFFERENCE = 1;
     private static final int MAX_LENGTH_DIFFERENCE = 5;
 
-    public static int getMinLengthProgression() {
-        return MIN_LENGTH_PROGRESSION;
-    }
-
-    public static int getMaxLengthProgression() {
-        return MAX_LENGTH_PROGRESSION;
-    }
-
-    public static int getMinLengthDifference() {
-        return MIN_LENGTH_DIFFERENCE;
-    }
-
-    public static int getMaxLengthDifference() {
-        return MAX_LENGTH_DIFFERENCE;
-    }
-
     public static String outputProgression(int[] arrToStr, int indexOfMissedNumber) {
 
         StringBuilder prepareStringProgression = new StringBuilder();
@@ -62,9 +46,9 @@ public class Progression {
         Engine.gameRules();
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int lengthProgression = Engine.randomizerNumbers(getMinLengthProgression(), getMaxLengthProgression());
+            int lengthProgression = Engine.randomizerNumbers(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
             int startNumber = Engine.randomizerNumbers();
-            int difference = Engine.randomizerNumbers(getMinLengthDifference(), getMaxLengthDifference());
+            int difference = Engine.randomizerNumbers(MIN_LENGTH_DIFFERENCE, MAX_LENGTH_DIFFERENCE);
             int missedNumber = Engine.randomizerNumbers(lengthProgression - 1);
             int[] progression = createProgression(lengthProgression, startNumber, difference);
 
