@@ -1,11 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class GCD {
-    private static final int MAX_VALUE_DIVISOR = 100;
+    private static final int MIN_VALUE_DIVISOR = 1;
+    private static final int MIN_VALUE_DIVIDEND = 0;
+    private static final int MAX_VALUE_DIVIDEND = 99;
+    private static final int MAX_VALUE_DIVISOR = 99;
+    public static String[][] questionsAndAnswers = new String[3][2];
 
     public static int calculateGCD(int a, int b) {
         int valueGCD = a;
@@ -18,25 +21,19 @@ public class GCD {
     }
 
     public static void playTheGame() {
-        boolean result;
-        Engine.setGameIndexEngine("4");
-        Engine.setInputUserText(new Scanner(System.in));
-
-        Engine.greeting();
-        Engine.gameRules();
-
+        String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int dividend = Engine.randomizerNumbers();
-            int divisor = Engine.randomizerNumbers(MAX_VALUE_DIVISOR);
+            int dividend = Utils.generateNumber(MIN_VALUE_DIVIDEND, MAX_VALUE_DIVIDEND);
+            int divisor = Utils.generateNumber(MIN_VALUE_DIVISOR, MAX_VALUE_DIVISOR);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
-            Engine.askQuestion(dividend + " " + divisor);
-            result = Engine.checkAnswer(Engine.getScr().nextLine(), resultGCD);
-            if (!result) {
-                break;
-            } else if (i == 2) {
-                Engine.finishMessage(true);
+            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
+                if (j == 0) {
+                    questionsAndAnswers[i][j] = dividend + " " + divisor;
+                } else {
+                    questionsAndAnswers[i][j] = String.valueOf(resultGCD);
+                }
             }
         }
-        Engine.getScr().close();
+        Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
 }

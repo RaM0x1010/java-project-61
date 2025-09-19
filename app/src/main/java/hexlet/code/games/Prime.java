@@ -1,42 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class Prime {
-
-    public static boolean isItPrimeNumber(int n) {
+    private static final int MIN_NUMBER_OF_RANGE = 1;
+    private static final int MAX_NUMBER_OF_RANGE = 100;
+    public static String[][] questionsAndAnswers = new String[3][2];
+    public static String isItPrimeNumber(int n) {
         if (n < 2) {
-            return false;
+            return "no";
         }
         double sqrt = Math.sqrt(n);
         for (int i = 2; i <= sqrt; i++) {
             if (n % i == 0) {
-                return false;
+                return "no";
             }
         }
-        return true;
+        return "yes";
     }
     public static void playTheGame() {
-        boolean result;
-
-        Engine.setGameIndexEngine("6");
-        Engine.setInputUserText(new Scanner(System.in));
-
-        Engine.greeting();
-        Engine.gameRules();
-
+        String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int num = Engine.randomizerNumbers();
-            Engine.askQuestion(String.valueOf(num));
-            result = Engine.checkAnswer(Engine.getScr().nextLine(), isItPrimeNumber(num));
-            if (!result) {
-                break;
-            } else if (i == 2) {
-                Engine.finishMessage(true);
+            int num = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
+            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
+                if (j == 0) {
+                    questionsAndAnswers[i][j] = String.valueOf(num);
+                } else {
+                    questionsAndAnswers[i][j] = isItPrimeNumber(num);
+                }
             }
         }
-        Engine.getScr().close();
+        Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
 }

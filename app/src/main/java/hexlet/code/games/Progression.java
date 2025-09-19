@@ -1,14 +1,17 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class Progression {
     private static final int MIN_LENGTH_PROGRESSION = 5;
     private static final int MAX_LENGTH_PROGRESSION = 10;
     private static final int MIN_LENGTH_DIFFERENCE = 1;
     private static final int MAX_LENGTH_DIFFERENCE = 5;
+    private static final int MIN_START_NUM = 1;
+    private static final int MAX_START_NUM = 100;
+    private static final int MIN_INDEX_MISSED_NUM = 0;
+    public static String[][] questionsAndAnswers = new String[3][2];
 
     public static String outputProgression(int[] arrToStr, int indexOfMissedNumber) {
 
@@ -36,30 +39,21 @@ public class Progression {
     }
 
     public static void playTheGame() {
-
-        boolean result;
-
-        Engine.setGameIndexEngine("5");
-        Engine.setInputUserText(new Scanner(System.in));
-
-        Engine.greeting();
-        Engine.gameRules();
-
+        String ruleOfTheGame = "What number is missing in the progression?";
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int lengthProgression = Engine.randomizerNumbers(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
-            int startNumber = Engine.randomizerNumbers();
-            int difference = Engine.randomizerNumbers(MIN_LENGTH_DIFFERENCE, MAX_LENGTH_DIFFERENCE);
-            int missedNumber = Engine.randomizerNumbers(lengthProgression - 1);
+            int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
+            int startNumber = Utils.generateNumber(MIN_START_NUM, MAX_START_NUM);
+            int difference = Utils.generateNumber(MIN_LENGTH_DIFFERENCE, MAX_LENGTH_DIFFERENCE);
+            int missedNumber = Utils.generateNumber(MIN_INDEX_MISSED_NUM, lengthProgression - 1);
             int[] progression = createProgression(lengthProgression, startNumber, difference);
-
-            Engine.askQuestion(outputProgression(progression, missedNumber));
-            result = Engine.checkAnswer(Engine.getScr().nextLine(), progression[missedNumber]);
-            if (!result) {
-                break;
-            } else if (i == 2) {
-                Engine.finishMessage(true);
+            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
+                if (j == 0) {
+                    questionsAndAnswers[i][j] = outputProgression(progression, missedNumber);
+                } else {
+                    questionsAndAnswers[i][j] = String.valueOf(progression[missedNumber]);
+                }
             }
         }
-        Engine.getScr().close();
+        Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
 }

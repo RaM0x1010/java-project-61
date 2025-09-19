@@ -1,27 +1,25 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class Calc {
     private static final int MIN_RANDOM_VALUE = 0;
     private static final int MAX_RANDOM_VALUE = 3;
+    private static final int MIN_NUMBER_OF_RANGE = 1;
+    private static final int MAX_NUMBER_OF_RANGE = 100;
+
+    public static String[][] questionsAndAnswers = new String[3][2];
 
     public static void playTheGame() {
-        boolean result = true;
+        String ruleOfTheGame = "What is the result of the expression?";
         int resultNum = 0;
         String[] operators = {"-", "+", "*"};
-        Engine.setGameIndexEngine("3");
-        Engine.setInputUserText(new Scanner(System.in));
-        Engine.greeting();
-        Engine.gameRules();
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-
-            int operandOne = Engine.randomizerNumbers();
-            int operandTwo = Engine.randomizerNumbers();
-            int operationIndex  = Engine.randomizerNumbers(
+            int operandOne = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
+            int operandTwo = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
+            int operationIndex  = Utils.generateNumber(
                     MIN_RANDOM_VALUE, MAX_RANDOM_VALUE) % MAX_RANDOM_VALUE;
 
             switch (operationIndex) {
@@ -38,16 +36,14 @@ public class Calc {
                     System.out.println("Something is gone wrong!");
             }
 
-            Engine.askQuestion(operandOne + " " + operators[operationIndex] + " " + operandTwo);
-            result = Engine.checkAnswer(Engine.getScr().nextLine(), resultNum);
-
-            if (!result) {
-                break;
-            } else if (i == 2) {
-                Engine.finishMessage(true);
+            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
+                if (j == 0) {
+                    questionsAndAnswers[i][j] = operandOne + " " + operators[operationIndex] + " " + operandTwo;
+                } else {
+                    questionsAndAnswers[i][j] = String.valueOf(resultNum);
+                }
             }
         }
-
-        Engine.getScr().close();
+        Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
 }
