@@ -1,10 +1,8 @@
 package hexlet.code;
 
-import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Engine {
-    private static final SecureRandom RANDOMIZED_OBJ = new SecureRandom();
     private static String userNameEngine;
     private static Scanner inputUserTextEngine;
     public static final int ROUNDS = 3;
