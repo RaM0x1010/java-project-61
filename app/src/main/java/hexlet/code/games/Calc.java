@@ -9,12 +9,12 @@ public class Calc {
     private static final int MIN_NUMBER_OF_RANGE = 1;
     private static final int MAX_NUMBER_OF_RANGE = 100;
 
-    public static String[][] questionsAndAnswers = new String[3][2];
-
     public static void playTheGame() {
         String ruleOfTheGame = "What is the result of the expression?";
         int resultNum = 0;
         String[] operators = {"-", "+", "*"};
+        String[][] questionsAndAnswers =
+                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int operandOne = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);

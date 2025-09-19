@@ -8,8 +8,8 @@ public class Engine {
     private static String userNameEngine;
     private static Scanner inputUserTextEngine;
     public static final int ROUNDS = 3;
-    private static final int MIN_NUMBER_OF_RANGE = 1;
-    private static final int MAX_NUMBER_OF_RANGE = 100;
+    public static final int NUMBER_ROUND_DIMENSION = 3;
+    public static final int NUMBER_QA_DIMENSION = 2;
 
     public static void setUserName(String userName) {
         userNameEngine = userName;
