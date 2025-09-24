@@ -27,13 +27,8 @@ public class GCD {
             int dividend = Utils.generateNumber(MIN_VALUE_DIVIDEND, MAX_VALUE_DIVIDEND);
             int divisor = Utils.generateNumber(MIN_VALUE_DIVISOR, MAX_VALUE_DIVISOR);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
-            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
-                if (j == 0) {
-                    questionsAndAnswers[i][j] = dividend + " " + divisor;
-                } else {
-                    questionsAndAnswers[i][j] = String.valueOf(resultGCD);
-                }
-            }
+            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = dividend + " " + divisor;
+            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = String.valueOf(resultGCD);
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
