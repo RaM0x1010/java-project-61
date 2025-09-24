@@ -7,8 +7,8 @@ public class EvenNumbers {
     private static final int MIN_RANDOM_VALUE = 1;
     private static final int MAX_RANDOM_VALUE = 100;
 
-    public static String isItEven(int num) {
-        return ((num % 2 == 0) ? "yes" : "no");
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 
     public static void playTheGame() {
@@ -17,13 +17,8 @@ public class EvenNumbers {
                 new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randomNumber = Utils.generateNumber(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
-            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
-                if (j == 0) {
-                    questionsAndAnswers[i][j] = String.valueOf(randomNumber);
-                } else {
-                    questionsAndAnswers[i][j] = isItEven(randomNumber);
-                }
-            }
+            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.valueOf(randomNumber);
+            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = (isEven(randomNumber)) ? "yes" : "no";
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
