@@ -36,7 +36,7 @@ public class Calc {
             questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] =
                     operandOne + " " + operators[operationIndex] + " " + operandTwo;
             questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] =
-                    String.valueOf(calculateExpression(operationIndex, operandOne,operandTwo));
+                    String.valueOf(calculateExpression(operationIndex,operandOne,operandTwo));
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
