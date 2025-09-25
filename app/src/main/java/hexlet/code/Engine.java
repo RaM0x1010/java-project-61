@@ -11,26 +11,25 @@ public class Engine {
     public static final int ANSWER_ARRAY_INDEX = 1;
 
     public static void play(String rules, String[][] questionsAndAnswers) {
-        boolean result = true;
         Scanner inputUserText = new Scanner(System.in);
-        String userName = inputUserText.next();
         System.out.print("Welcome to the Brain Games!\n\rMay I have your name? ");
+        String userName = inputUserText.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
         for (int i = 0; i < ROUNDS; i++) {
+            boolean isCorrect = true;
             for (int j = 0; j < questionsAndAnswers[i].length; j++) {
                 if (j == 0) {
                     System.out.println("Question: " + questionsAndAnswers[i][j]);
                     System.out.print("Your answer: ");
                 } else {
-                    result = checkAnswer(inputUserText.nextLine(), questionsAndAnswers[i][j], userName);
+                    isCorrect = checkAnswer(inputUserText.nextLine(), questionsAndAnswers[i][j], userName);
                 }
             }
-            if (!result) {
+            if (!isCorrect) {
                 break;
-            } else if (i == 2) {
+            } else if (i == ROUNDS - 1) {
                 System.out.println("Congratulations, " + userName + "!");
-                inputUserText.close();
             }
         }
         inputUserText.close();
