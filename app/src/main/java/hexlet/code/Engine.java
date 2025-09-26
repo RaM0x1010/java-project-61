@@ -29,7 +29,7 @@ public class Engine {
             }
             if (!isCorrect) {
                 break;
-            } else if (qaIndex == questionsAnswersPair.length) {
+            } else if (qaIndex == questionsAndAnswers.length - 1) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
