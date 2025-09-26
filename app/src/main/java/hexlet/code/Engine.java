@@ -15,23 +15,24 @@ public class Engine {
         String userName = inputUserText.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
-        for (int i = 0; i < ROUNDS; i++) {
+        for (String[] questionsAnswersPair : questionsAndAnswers) {
             boolean isCorrect = true;
-            for (int j = 0; j < questionsAndAnswers[i].length; j++) {
-                if (j == 0) {
-                    System.out.println("Question: " + questionsAndAnswers[i][j]);
+            int qaIndex = 0;
+            for (String qa : questionsAnswersPair) {
+                if (qaIndex == 0) {
+                    System.out.println("Question: " + qa);
                     System.out.print("Your answer: ");
                 } else {
-                    isCorrect = checkAnswer(inputUserText.nextLine(), questionsAndAnswers[i][j], userName);
+                    isCorrect = checkAnswer(inputUserText.nextLine(), qa, userName);
                 }
+                qaIndex++;
             }
             if (!isCorrect) {
                 break;
-            } else if (i == ROUNDS - 1) {
+            } else if (qaIndex == questionsAnswersPair.length) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
-        inputUserText.close();
     }
 
     public static boolean checkAnswer(String userInput, String correctAnswer, String userName) {
