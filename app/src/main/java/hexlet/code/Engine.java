@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int ROUNDS = 3;
-    public static final int NUMBER_ROUND_DIMENSION = 3;
     public static final int NUMBER_QA_DIMENSION = 2;
     public static final int QUESTION_ARRAY_INDEX = 0;
     public static final int ANSWER_ARRAY_INDEX = 1;

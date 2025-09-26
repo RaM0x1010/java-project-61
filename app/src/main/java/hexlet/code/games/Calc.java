@@ -27,7 +27,7 @@ public class Calc {
         String ruleOfTheGame = "What is the result of the expression?";
         String[] operators = {"-", "+", "*"};
         String[][] questionsAndAnswers =
-                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
+                new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int operandOne = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
             int operandTwo = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);

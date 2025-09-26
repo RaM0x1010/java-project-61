@@ -23,7 +23,7 @@ public class Prime {
     public static void playTheGame() {
         String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionsAndAnswers =
-                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
+                new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int num = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
             questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.valueOf(num);

@@ -14,7 +14,7 @@ public class EvenNumbers {
     public static void playTheGame() {
         String ruleOfTheGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] questionsAndAnswers =
-                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
+                new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int randomNumber = Utils.generateNumber(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
             questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.valueOf(randomNumber);

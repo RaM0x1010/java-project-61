@@ -22,7 +22,7 @@ public class GCD {
     public static void playTheGame() {
         String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
         String[][] questionsAndAnswers =
-                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
+                new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int dividend = Utils.generateNumber(MIN_VALUE_DIVIDEND, MAX_VALUE_DIVIDEND);
             int divisor = Utils.generateNumber(MIN_VALUE_DIVISOR, MAX_VALUE_DIVISOR);

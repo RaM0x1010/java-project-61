@@ -25,7 +25,7 @@ public class Progression {
     public static void playTheGame() {
         String ruleOfTheGame = "What number is missing in the progression?";
         String[][] questionsAndAnswers =
-                new String[Engine.NUMBER_ROUND_DIMENSION][Engine.NUMBER_QA_DIMENSION];
+                new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
         int missedNumber = Utils.generateNumber(MIN_INDEX_MISSED_NUM, lengthProgression - 1);
         for (int i = 0; i < Engine.ROUNDS; i++) {
