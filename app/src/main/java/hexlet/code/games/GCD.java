@@ -23,12 +23,12 @@ public class GCD {
         String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
         String[][] questionsAndAnswers =
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        for (String[] qa : questionsAndAnswers) {
             int dividend = Utils.generateNumber(MIN_VALUE_DIVIDEND, MAX_VALUE_DIVIDEND);
             int divisor = Utils.generateNumber(MIN_VALUE_DIVISOR, MAX_VALUE_DIVISOR);
             int resultGCD = GCD.calculateGCD(dividend, divisor);
-            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = dividend + " " + divisor;
-            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = String.valueOf(resultGCD);
+            qa[Engine.QUESTION_ARRAY_INDEX] = dividend + " " + divisor;
+            qa[Engine.ANSWER_ARRAY_INDEX] = String.valueOf(resultGCD);
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
