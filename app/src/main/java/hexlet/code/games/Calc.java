@@ -28,14 +28,14 @@ public class Calc {
         String[] operators = {"-", "+", "*"};
         String[][] questionsAndAnswers =
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        for (String[] qa : questionsAndAnswers) {
             int operandOne = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
             int operandTwo = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
             int operationIndex  = Utils.generateNumber(
                     MIN_RANDOM_VALUE, MAX_RANDOM_VALUE) % MAX_RANDOM_VALUE;
-            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] =
+            qa[Engine.QUESTION_ARRAY_INDEX] =
                     operandOne + " " + operators[operationIndex] + " " + operandTwo;
-            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] =
+            qa[Engine.ANSWER_ARRAY_INDEX] =
                     String.valueOf(calculateExpression(operationIndex, operandOne, operandTwo));
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
