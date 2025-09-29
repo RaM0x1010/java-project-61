@@ -28,12 +28,12 @@ public class Progression {
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
         int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
         int missedNumber = Utils.generateNumber(MIN_INDEX_MISSED_NUM, lengthProgression - 1);
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        for (String[] qa : questionsAndAnswers) {
             String[] progression = createProgression(lengthProgression);
             String answer = progression[missedNumber];
             progression[missedNumber] = "..";
-            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.join(" ", progression);
-            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = answer;
+            qa[Engine.QUESTION_ARRAY_INDEX] = String.join(" ", progression);
+            qa[Engine.ANSWER_ARRAY_INDEX] = answer;
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
