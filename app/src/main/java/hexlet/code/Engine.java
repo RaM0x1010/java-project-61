@@ -23,7 +23,8 @@ public class Engine {
             if (userInput.equals(questionsAnswersPair[ANSWER_ARRAY_INDEX])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userInput + "' is wrong answer ;(. Correct answer was '" + questionsAnswersPair[ANSWER_ARRAY_INDEX] + "'.");
+                System.out.println("'" + userInput + "' is wrong answer ;(. Correct answer was '" +
+                        questionsAnswersPair[ANSWER_ARRAY_INDEX] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 isCorrect = false;
                 break;
