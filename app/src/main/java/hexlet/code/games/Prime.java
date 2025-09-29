@@ -24,10 +24,10 @@ public class Prime {
         String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionsAndAnswers =
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        for (String[] qa : questionsAndAnswers) {
             int num = Utils.generateNumber(MIN_NUMBER_OF_RANGE, MAX_NUMBER_OF_RANGE);
-            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.valueOf(num);
-            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = (isPrimeNumber(num)) ? "yes" : "no";
+            qa[Engine.QUESTION_ARRAY_INDEX] = String.valueOf(num);
+            qa[Engine.ANSWER_ARRAY_INDEX] = (isPrimeNumber(num)) ? "yes" : "no";
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
