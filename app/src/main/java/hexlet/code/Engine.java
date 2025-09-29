@@ -17,31 +17,20 @@ public class Engine {
         System.out.println(rules);
         boolean isCorrect = true;
         for (String[] questionsAnswersPair : questionsAndAnswers) {
-            for (int i = 0; i < questionsAnswersPair.length; i++) {
-                if (i == 0) {
-                    System.out.println("Question: " + questionsAnswersPair[i]);
-                    System.out.print("Your answer: ");
-                } else {
-                    isCorrect = checkAnswer(inputUserText.nextLine(), questionsAnswersPair[i], userName);
-                }
-            }
-            if (!isCorrect) {
+            System.out.println("Question: " + questionsAnswersPair[QUESTION_ARRAY_INDEX]);
+            System.out.print("Your answer: ");
+            String userInput = inputUserText.nextLine();
+            if (userInput.equals(questionsAnswersPair[ANSWER_ARRAY_INDEX])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + userInput + "' is wrong answer ;(. Correct answer was '" + questionsAnswersPair[ANSWER_ARRAY_INDEX] + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                isCorrect = false;
                 break;
             }
         }
         if (isCorrect) {
             System.out.println("Congratulations, " + userName + "!");
-        }
-    }
-
-    public static boolean checkAnswer(String userInput, String correctAnswer, String userName) {
-        if (userInput.equals(correctAnswer)) {
-            System.out.println("Correct!");
-            return true;
-        } else {
-            System.out.println("'" + userInput + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            return false;
         }
     }
 }
