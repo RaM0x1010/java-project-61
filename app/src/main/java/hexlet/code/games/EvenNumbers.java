@@ -15,10 +15,10 @@ public class EvenNumbers {
         String ruleOfTheGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] questionsAndAnswers =
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
+        for (String[] qa : questionsAndAnswers) {
             int randomNumber = Utils.generateNumber(MIN_RANDOM_VALUE, MAX_RANDOM_VALUE);
-            questionsAndAnswers[i][Engine.QUESTION_ARRAY_INDEX] = String.valueOf(randomNumber);
-            questionsAndAnswers[i][Engine.ANSWER_ARRAY_INDEX] = (isEven(randomNumber)) ? "yes" : "no";
+            qa[Engine.QUESTION_ARRAY_INDEX] = String.valueOf(randomNumber);
+            qa[Engine.ANSWER_ARRAY_INDEX] = (isEven(randomNumber)) ? "yes" : "no";
         }
         Engine.play(ruleOfTheGame, questionsAndAnswers);
     }
