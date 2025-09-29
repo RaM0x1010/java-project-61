@@ -18,7 +18,6 @@ public class Calc {
             case 2:
                 return firstNum * secondNum;
             default:
-                System.out.println("Something is gone wrong!");
                 return 0;
         }
     }
