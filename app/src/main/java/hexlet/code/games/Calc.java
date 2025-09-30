@@ -18,7 +18,7 @@ public class Calc {
             case 2:
                 return firstNum * secondNum;
             default:
-                return 0;
+                throw new RuntimeException("Unknown operator: " + index);
         }
     }
 
