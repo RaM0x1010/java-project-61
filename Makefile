@@ -7,3 +7,4 @@ checkstyle:
 clean-install:
 	cd app/ && gradle clean build
 restart: clean-install install run-dist
+.PHONY: build
