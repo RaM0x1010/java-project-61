@@ -12,12 +12,10 @@ public class Progression {
     private static final int MAX_START_NUM = 100;
     private static final int MIN_INDEX_MISSED_NUM = 0;
 
-    public static String[] createProgression(int progressionLength) {
-        int startNumber = Utils.generateNumber(MIN_START_NUM, MAX_START_NUM);
-        int difference = Utils.generateNumber(MIN_LENGTH_DIFFERENCE, MAX_LENGTH_DIFFERENCE);
+    public static String[] createProgression(int startNum, int diffNum, int progressionLength) {
         String[] progression = new String[progressionLength];
         for (int i = 0; i < progression.length; i++) {
-            progression[i] = String.valueOf(startNumber + i * difference);
+            progression[i] = String.valueOf(startNum + i * diffNum);
         }
         return progression;
     }
@@ -26,10 +24,12 @@ public class Progression {
         String ruleOfTheGame = "What number is missing in the progression?";
         String[][] questionsAndAnswers =
                 new String[Engine.ROUNDS][Engine.NUMBER_QA_DIMENSION];
-        int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
-        int missedNumber = Utils.generateNumber(MIN_INDEX_MISSED_NUM, lengthProgression - 1);
         for (String[] qa : questionsAndAnswers) {
-            String[] progression = createProgression(lengthProgression);
+            int startNumber = Utils.generateNumber(MIN_START_NUM, MAX_START_NUM);
+            int difference = Utils.generateNumber(MIN_LENGTH_DIFFERENCE, MAX_LENGTH_DIFFERENCE);
+            int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
+            int missedNumber = Utils.generateNumber(MIN_INDEX_MISSED_NUM, lengthProgression - 1);
+            String[] progression = createProgression(startNumber, difference, lengthProgression);
             String answer = progression[missedNumber];
             progression[missedNumber] = "..";
             qa[Engine.QUESTION_ARRAY_INDEX] = String.join(" ", progression);
